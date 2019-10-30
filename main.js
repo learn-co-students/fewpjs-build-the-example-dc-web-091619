@@ -8,9 +8,11 @@ const errorModal = document.getElementById("modal");
 errorModal.classList.add("hidden")
 
 document.addEventListener("DOMContentLoaded",()=>{
-  //grab the heart, add .eventListener to it
-  const jsLike = document.getElementById("js-like");
-  jsLike.addEventListener("click",callFetcher);
+  //grab the hearts, add .eventListener to it
+  const thingsToLike = document.querySelectorAll(".like-glyph")
+  thingsToLike.forEach(function(heart) {
+    heart.addEventListener("click", callFetcher)
+  })
 
 })
 
