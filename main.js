@@ -8,9 +8,11 @@ let heartStates = {
   '♥' : '♡'
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  errorContainer().classList.add("hidden")
-})
+errorContainer().classList.add("hidden")
+
+// document.addEventListener('DOMContentLoaded', () => {
+  //errorContainer().classList.add("hidden")
+// })
 
 
 //get all of the like `<li>s` and attach EventListeners that invoke the updateLike callback function
