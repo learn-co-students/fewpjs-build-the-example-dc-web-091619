@@ -8,6 +8,9 @@ let heartStates = {
   '♥' : '♡'
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  errorContainer().classList.add("hidden")
+})
 
 
 //get all of the like `<li>s` and attach EventListeners that invoke the updateLike callback function
@@ -26,8 +29,18 @@ function updateLike(event){
       heart.innerText = heartStates[heart.innerText]
       heart.classList.contains('activated-heart') ? heart.classList.remove('activated-heart') : heart.classList.add('activated-heart')
     } )
+    .catch( (error) => {
+      errorContainer().classList.remove("hidden")
+      errorContainer().children[1].innerText = error
+      setTimeout(function(){
+        errorContainer().classList.add("hidden")
+      },5000)
+    } )
 }
 
+function errorContainer(){
+  return document.getElementById('modal')
+}
 
 
 //------------------------------------------------------------------------------
